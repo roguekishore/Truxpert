@@ -1,0 +1,63 @@
+.t-home-container {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.t-home-container h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.t-home-container p {
+  color: #555;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.t-home-container .t-home-button-link {
+  text-decoration: none;
+}
+
+.t-home-container .t-home-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.t-home-container .t-home-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.t-home-container .t-home-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+@media (max-width: 768px) {
+  .t-home-container {
+    padding: 2rem 1rem;
+  }
+  
+  .t-home-container h1 {
+    font-size: 2rem;
+  }
+  
+  .t-home-container p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,469 @@
+/* DynamicForm.css - Responsive Form Component */
+.form-container {
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --- Form Header --- */
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background-color: #6366f1;
+  color: white;
+  border-radius: 12px;
+}
+
+.form-title {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: #111827;
+}
+
+/* --- Form Body and Fields --- */
+.form-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-right: -0.5rem;
+}
+
+/* Custom scrollbar for form body */
+.form-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.form-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.form-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.form-field-group {
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.form-field-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.required-star {
+  color: #dc2626;
+}
+
+/* Input Styles */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-input.input-error {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Input with Icon */
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  z-index: 1;
+}
+
+.form-input.has-icon {
+  padding-left: 2.5rem;
+}
+
+/* Error Messages */
+.error-message {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* Documents Section */
+.documents-section {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.documents-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.documents-icon {
+  width: 20px;
+  height: 20px;
+  color: #6366f1;
+}
+
+.add-document-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.add-document-btn:hover {
+  background-color: #5855eb;
+  transform: translateY(-1px);
+}
+
+/* Document Items */
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.document-item {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.document-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.document-number {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.remove-document-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-document-btn:hover {
+  background-color: #fecaca;
+  transform: scale(1.05);
+}
+
+.document-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* File Path Specific Styles */
+.file-path-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.file-path-icon {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+  z-index: 1;
+}
+
+.file-path-input {
+  padding-left: 2.5rem !important;
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+}
+
+.file-path-hint {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* --- Form Actions --- */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-shrink: 0; /* Prevent actions from shrinking */
+}
+
+/* --- Buttons --- */
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.button-primary {
+  background-color: #6366f1;
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: #5855eb;
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: #d1d5db;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    margin: 0;
+    padding: 1rem;
+    max-height: 95vh;
+  }
+  
+  .form-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .form-title {
+    font-size: 1.25rem;
+  }
+  
+  .document-fields {
+    grid-template-columns: 1fr;
+  }
+  
+  .documents-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .add-document-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+  }
+  
+  .form-input {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 0.75rem;
+    max-height: 98vh;
+  }
+  
+  .header-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+  
+  .form-title {
+    font-size: 1.125rem;
+  }
+  
+  .form-field-group {
+    margin-bottom: 1rem;
+  }
+  
+  .documents-section {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .document-item {
+    padding: 1rem;
+  }
+}
+
+/* Ensure proper scrolling */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Loading state */
+.form-body.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Success state indication */
+.document-item.completed {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.document-item.completed .document-number {
+  color: #059669;
+}
+
+/* Error state for documents section */
+.documents-section .error-message {
+  margin-bottom: 1rem;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 0.75rem;
+}

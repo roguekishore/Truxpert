@@ -1,0 +1,82 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem; /* Add padding for mobile */
+  overflow-y: auto; /* Allow modal overlay to scroll */
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 0; /* Remove padding - let the form handle its own padding */
+  width: 100%;
+  max-width: 900px; /* Increase to accommodate the form properly */
+  max-height: 95vh; /* Constrain height to viewport */
+  margin: auto; /* Center the modal */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevent modal from overflowing */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem 1rem 2rem; /* Add padding back to header */
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0; /* Prevent header from shrinking */
+  background-color: white;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-content {
+  flex: 1; /* Take remaining space */
+  overflow-y: auto; /* Make content scrollable */
+  padding: 1rem 0; /* Add some padding */
+}
+
+.close-btn {
+  color: #6b7280;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #4b5563;
+  background-color: #f3f4f6;
+}
+
+/* Responsive design for modal */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+  
+  .modal-container {
+    max-width: 100%;
+    max-height: 98vh;
+  }
+  
+  .modal-header {
+    padding: 1rem 1.5rem 0.75rem 1.5rem;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.125rem;
+  }
+}

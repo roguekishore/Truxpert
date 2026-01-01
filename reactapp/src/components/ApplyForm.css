@@ -1,0 +1,158 @@
+.applyForm-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.applyForm-container h2 {
+  color: #2c3e50;
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.applyForm-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.applyForm-form-group label {
+  display: block;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.applyForm-form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.applyForm-form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.applyForm-form-group input:hover {
+  border-color: #bbb;
+}
+
+.applyForm-error {
+  display: block;
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.apply-form-button {
+  width: 100%;
+  background-color: #ff7316;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
+.apply-form-button:hover {
+  background-color: #ca5b11;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(174, 142, 39, 0.3);
+}
+
+.apply-form-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(174, 39, 39, 0.3);
+}
+
+.applyForm-success-modal {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 1px solid #c3e6cb;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.applyForm-success-modal p {
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.applyForm-success-modal button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.applyForm-success-modal button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .applyForm-container {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+  
+  .applyForm-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .applyForm-success-modal {
+    width: 90%;
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .applyForm-container {
+    margin: 0 0.5rem;
+    padding: 1rem;
+  }
+  
+  .applyForm-container h2 {
+    font-size: 1.25rem;
+  }
+  
+  .apply-form-button {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+}

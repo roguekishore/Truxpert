@@ -1,0 +1,381 @@
+/* InspectorApp.css - Responsive Inspector Dashboard */
+.loading,
+.error {
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+.error {
+  color: #d84315;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.dashboard h1 {
+  color: #333;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.stat-card h3 {
+  color: #666;
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.stat-number {
+  color: #333;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.today-schedule {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.today-schedule h2 {
+  color: #333;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-item .time {
+  width: 70px;
+  min-width: 70px;
+  color: #e65100;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.schedule-item .task {
+  flex: 1;
+  color: #333;
+  font-size: 0.875rem;
+  min-width: 150px;
+}
+
+.schedule-item .status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.schedule-item .status.pending {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+/* Assigned Tasks Styles */
+.assigned-tasks,
+.inspection-locations,
+.inspection-reports {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.assigned-tasks h1,
+.inspection-locations h1,
+.inspection-reports h1 {
+  color: #333;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.tasks-list,
+.locations-list,
+.reports-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.task-card,
+.location-item,
+.report-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.task-card h3,
+.location-item h3,
+.report-card h3 {
+  color: #333;
+  margin-top: 0;
+  font-size: 1.125rem;
+}
+
+.task-card p,
+.location-item p,
+.report-card p {
+  color: #666;
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.task-card strong,
+.location-item strong,
+.report-card strong {
+  color: #333;
+}
+
+.task-checklist {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.task-checklist h4 {
+  color: #333;
+  margin-top: 0;
+  font-size: 0.95rem;
+}
+
+.task-checklist ul {
+  margin: 0.625rem 0 0 0;
+  padding-left: 1.25rem;
+}
+
+.task-checklist li {
+  color: #666;
+  font-size: 0.8125rem;
+  margin-bottom: 0.375rem;
+}
+
+.task-actions,
+.location-actions {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.pass-btn,
+.fail-btn,
+.contact-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+  min-width: fit-content;
+}
+
+.pass-btn {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.pass-btn:hover {
+  background: #c8e6c9;
+}
+
+.fail-btn {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.fail-btn:hover {
+  background: #ef9a9a;
+  color: white;
+}
+
+.contact-btn {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #90caf9;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-btn:hover {
+  background: #bbdefb;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+.status-badge.in_progress {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.status-badge.pass {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.fail {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Reports Filter */
+.report-actions {
+  margin-bottom: 1.25rem;
+}
+
+.report-filter {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: white;
+  color: #333;
+  font-size: 0.875rem;
+  max-width: 100%;
+}
+
+/* Report Summary */
+.report-summary {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f5f5f5;
+}
+
+.report-summary ul {
+  margin: 0.625rem 0 0 0;
+  padding-left: 1.25rem;
+}
+
+.report-summary li {
+  color: #666;
+  font-size: 0.8125rem;
+  margin-bottom: 0.375rem;
+}
+
+/* No Data States */
+.no-applications,
+.no-data {
+  padding: 2.5rem;
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  background: white;
+  border: 1px dashed #e0e0e0;
+  border-radius: 8px;
+  grid-column: 1 / -1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard,
+  .assigned-tasks,
+  .inspection-locations,
+  .inspection-reports {
+    padding: 0.75rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .tasks-list,
+  .locations-list,
+  .reports-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .task-actions,
+  .location-actions {
+    flex-direction: column;
+  }
+  
+  .schedule-item {
+    flex-wrap: wrap;
+  }
+  
+  .schedule-item .time {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard h1,
+  .assigned-tasks h1,
+  .inspection-locations h1,
+  .inspection-reports h1 {
+    font-size: 1.125rem;
+  }
+  
+  .stat-number {
+    font-size: 1.25rem;
+  }
+  
+  .task-card,
+  .location-item,
+  .report-card {
+    padding: 1rem;
+  }
+}

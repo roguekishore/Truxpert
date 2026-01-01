@@ -1,0 +1,64 @@
+FOODTRUCKVENDOR
+{
+  "name": "Dosa Delight",
+  "cuisineSpecialties": "South Indian, Dosas, Idli",
+  "operatingRegion": "Chennai",
+  "menuHighlights": "Masala Dosa, Onion Rava Dosa, Filter Coffee",
+  "phoneNumber": "+91 8765432109"
+}
+
+USER
+{
+  "name": "Jane Smith",
+  "email": "jane.smith@email.com",
+  "password": "demo",
+  "role": "ADMIN"
+}
+
+VENDOR
+{
+    "name": "Global Food Ventures",
+    "phoneNumber": "9876543210",
+    "emailId": "contact@globalfood.com",
+    "address": "123 Main Street, Chennai"
+}
+
+BRAND
+{
+    "brandName": "The Taco Stand"
+}
+
+FOODTRUCK
+{
+    "operatingRegion": "Chennai",
+    "location": "Anna Nagar",
+    "phoneNumber": "9988776655",
+    "cuisineSpecialties": "Mexican",
+    "menuHighlights": "Tacos, Burritos, Quesadillas",
+}
+
+MENUITEM
+{
+  "name": "Spicy Tacos",
+  "price": 8.99,
+  "description": "Two warm corn tortillas filled with seasoned ground beef, fresh salsa, lettuce, and a sprinkle of cheese."
+}
+
+LISTITEMS
+[
+  {
+    "name": "Classic Burger",
+    "price": 9.50,
+    "description": "A juicy beef patty with lettuce, tomato, and onion on a toasted bun."
+  },
+  {
+    "name": "Veggie Wrap",
+    "price": 7.75,
+    "description": "A spinach tortilla filled with hummus, mixed greens, bell peppers, and cucumber."
+  },
+  {
+    "name": "French Fries",
+    "price": 3.00,
+    "description": "Crispy, golden-brown french fries seasoned with sea salt."
+  }
+]
