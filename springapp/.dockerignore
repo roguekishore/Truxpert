@@ -1,0 +1,18 @@
+# Build output — 33MB of stale artifacts, never needed in the build context
+target/
+
+# Local tooling / IDE
+.git
+.gitignore
+.idea/
+.vscode/
+*.iml
+
+# Secrets and local overrides — must never enter an image layer
+.env
+.env.*
+application-local.properties
+
+# Backups / scratch
+*.bak
+*.log

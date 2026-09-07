@@ -1,0 +1,53 @@
+# ============================================================
+#  Truxpert — GraalVM native image (ARM64)
+# ============================================================
+#  Build ON an arm64 host (no --platform pins, no emulation):
+#    docker build -f Dockerfile.native -t roguekishore/truxpert:native-1 .
+#
+#  native-image needs 8-16GB RAM. Build on the 16-32GB box,
+#  never on the 4GB runtime instance.
+#
+#  The binary ignores JAVA_OPTS. Cap heap as a runtime arg instead:
+#    docker run ... roguekishore/truxpert:native-1 -Xmx128m
+# ============================================================
+
+# ── Stage 1: compile to a native binary ─────────────────────
+FROM ghcr.io/graalvm/native-image-community:17 AS build
+
+# GraalVM image ships the JDK + native-image only; Maven is not included
+RUN microdnf install -y maven && microdnf clean all
+
+WORKDIR /app
+
+# Dependency layer — re-runs only when pom.xml changes
+COPY pom.xml .
+RUN mvn dependency:go-offline -q
+
+# Source, then AOT + native compile.
+# -Pnative merges with spring-boot-starter-parent's own `native` profile,
+# which is what wires up the spring-boot-maven-plugin process-aot goal.
+COPY src ./src
+RUN mvn clean package -Pnative -DskipTests
+
+# ── Stage 2: minimal runtime — no JRE required ───────────────
+FROM debian:bookworm-slim
+
+# ca-certificates is required for TLS (MySQL over TLS, any outbound HTTPS).
+# bookworm-slim does not ship it.
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+# Non-root runtime user
+RUN groupadd --system app && useradd --system --gid app --home-dir /app app
+
+WORKDIR /app
+
+COPY --from=build /app/target/truxpert app
+RUN chown -R app:app /app && chmod +x /app/app
+
+USER app
+
+EXPOSE 8080
+
+ENTRYPOINT ["./app"]
