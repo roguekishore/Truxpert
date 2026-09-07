@@ -14,14 +14,14 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "application_id")
-    @JsonIgnoreProperties({"review"}) // Only ignore the back-reference to avoid circular reference
+    @JsonIgnoreProperties({"review"})
     private Application application;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "reviewer_id")
-    @JsonIgnoreProperties({"password", "reviews"}) // Exclude sensitive data and avoid circular reference
+    @JsonIgnoreProperties({"password", "reviews"})
     private User reviewer;
 
     private LocalDateTime reviewDate;

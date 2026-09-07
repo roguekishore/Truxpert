@@ -15,12 +15,12 @@ public class Application {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "food_truck_id")
-    @JsonIgnoreProperties({"applications"}) // Prevent circular reference if FoodTruck has applications list
+    @JsonIgnoreProperties({"applications"})
     private FoodTruck foodTruck;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "vendor_id")
     private Vendor vendor;
 
@@ -33,7 +33,7 @@ public class Application {
     @JsonManagedReference("application-documents")
     private List<Document> documents;
 
-    @OneToOne(mappedBy = "application", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "application", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"application"}) // Prevent circular reference
     private Review review;
 
