@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "FoodTruckVendor")
-@NoArgsConstructor
 public class FoodTruckVendor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,6 +63,9 @@ public class FoodTruckVendor {
         this.operatingRegion = operatingRegion;
         this.menuHighlights = menuHighlights;
         this.phoneNumber = phoneNumber;
+    }
+
+    public FoodTruckVendor() {
     }
 
     
