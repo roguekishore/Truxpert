@@ -61,7 +61,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchDashboardStats();
@@ -168,7 +168,7 @@ const AssignReviewers = () => {
   });
   const [showUnassignedOnly, setShowUnassignedOnly] = useState(true);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchApplications();
@@ -484,7 +484,7 @@ const AssignInspectors = () => {
     sortDirection: 'asc'
   });
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchData();
@@ -737,7 +737,7 @@ const RegionalView = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchRegionalData();
@@ -864,7 +864,7 @@ const ApplicationsManagement = () => {
     totalPages: 0
   });
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchApplications();

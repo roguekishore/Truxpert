@@ -72,7 +72,7 @@ const SuperAdminDashboard = () => {
     securityAlerts: 0
   });
   const [loading, setLoading] = useState(true);
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchDashboardStats();
@@ -282,7 +282,7 @@ const UserManagement = () => {
   const [showAddUserModal, setShowAddUserModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingUser, setEditingUser] = useState(null);
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   // Demo emails that should be protected from editing/deletion (all seeded accounts)
   const DEMO_EMAILS = [
@@ -571,7 +571,7 @@ const AddUserModal = ({ onClose, onUserAdded }) => {
     password: '',
     role: 'ADMIN'
   });
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({

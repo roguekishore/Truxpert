@@ -21,7 +21,7 @@ const Login = ({ onLogin, switchToRegister }) => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [userType, setUserType] = useState('VENDOR'); // Default to VENDOR
-    const BASE_URL = process.env.REACT_APP_URL;
+    const BASE_URL = import.meta.env.REACT_APP_URL;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
