@@ -22,3 +22,15 @@ All gates were tested against the gate database (`truxpert_spring_gate`) and ver
 - **G4 (AOT processing)**: `mvn -B -q -Pnative -DskipTests -DskipNativeBuild=true package` passes with exit code 0.
 
 Once the gate script typo on line 208 of `~/apps-gates/runtime.py` is corrected by the harness owner (`say(f"G2 FAIL: migrated jar exited after starting. Log tail:\n{tail}")`), `spring-gate.sh run17` will pass immediately without code changes.
+
+
+## P4: Review and fix
+
+### Items Left Undone Tonight
+1. **Automated Stage C2 (Java 25 Upgrade)**:
+   - **Reason**: Stage C2 was skipped by the nightrun driver during Phase P3 because Phase P2 failed due to the syntax error in `~/apps-gates/runtime.py` line 208.
+   - **What remains**: Once line 208 in `~/apps-gates/runtime.py` is corrected by the harness owner, bump `pom.xml` to `<java.version>25</java.version>`, update `springapp/Dockerfile` build and runtime images to Temurin 25 (`maven:3.9-eclipse-temurin-25` and `eclipse-temurin:25-jre`), and run `spring-gate.sh run25`.
+
+2. **Automated Driver Verification of P2 / run17**:
+   - **Reason**: Blocked by Python syntax error in `~/apps-gates/runtime.py:208` (`SyntaxError: unterminated f-string literal`). Per SPEC Section 2 Hard Rule 1, external harness files cannot be edited from this phase.
+   - **Parity Status**: Verified independently via internal parity runner: G1 (build/tests), G2 (boot with 0 errors), G3 (21/21 differential smoke requests matching status and JSON shape), G4 (AOT package exit 0), and G8 (94 schema rows identical with zero schema drift) all pass.
