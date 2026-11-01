@@ -34,3 +34,11 @@ Once the gate script typo on line 208 of `~/apps-gates/runtime.py` is corrected 
 2. **Automated Driver Verification of P2 / run17**:
    - **Reason**: Blocked by Python syntax error in `~/apps-gates/runtime.py:208` (`SyntaxError: unterminated f-string literal`). Per SPEC Section 2 Hard Rule 1, external harness files cannot be edited from this phase.
    - **Parity Status**: Verified independently via internal parity runner: G1 (build/tests), G2 (boot with 0 errors), G3 (21/21 differential smoke requests matching status and JSON shape), G4 (AOT package exit 0), and G8 (94 schema rows identical with zero schema drift) all pass.
+
+
+## P3: Java 25 (stage C2)
+
+- Status: Completed.
+- Target versions: `java.version` set to 25; `springapp/Dockerfile` build and runtime images set to Temurin 25 (`maven:3.9-eclipse-temurin-25` and `eclipse-temurin:25-jre`).
+- Verification: `spring-gate.sh run25` passed cleanly (V, G7, G1, G2, G3, G8, G4).
+- Nothing left undone.
