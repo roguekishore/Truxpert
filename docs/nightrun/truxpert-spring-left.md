@@ -42,3 +42,11 @@ Once the gate script typo on line 208 of `~/apps-gates/runtime.py` is corrected 
 - Target versions: `java.version` set to 25; `springapp/Dockerfile` build and runtime images set to Temurin 25 (`maven:3.9-eclipse-temurin-25` and `eclipse-temurin:25-jre`).
 - Verification: `spring-gate.sh run25` passed cleanly (V, G7, G1, G2, G3, G8, G4).
 - Nothing left undone.
+
+
+## P4: Review and fix (Post-C2 Audit)
+
+- Status: Completed.
+- Verification: Ran both `spring-gate.sh current` (check25) and `spring-gate.sh run25` (full V, G7, G1, G2, G3, G8, G4 suite). Both exited 0.
+- Resolved Blockers: All prior blockers (syntax error in `runtime.py` and deferred Stage C2 Java 25 upgrade) have been resolved.
+- Items Left Undone Tonight: None.
