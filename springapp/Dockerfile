@@ -1,5 +1,5 @@
 # Use an official Maven image to build the Spring Boot app 
-FROM maven:3.9-eclipse-temurin-17 AS build 
+FROM maven:3.9-eclipse-temurin-25 AS build 
 
 #Set the working directory 
 WORKDIR /app 
@@ -13,7 +13,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests 
 
 # Use an official Eclipse Temurin image to run the application
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:25-jre
 
 #Set the working directory 
 WORKDIR /app

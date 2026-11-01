@@ -12,7 +12,7 @@
 # ============================================================
 
 # ── Stage 1: compile to a native binary ─────────────────────
-FROM ghcr.io/graalvm/native-image-community:17 AS build
+FROM ghcr.io/graalvm/native-image-community:25 AS build
 
 # GraalVM image ships the JDK + native-image only; Maven is not included
 RUN microdnf install -y maven && microdnf clean all
