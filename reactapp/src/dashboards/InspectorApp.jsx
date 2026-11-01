@@ -53,7 +53,7 @@ const InspectorDashboard = ({ user }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchStats();
@@ -154,7 +154,7 @@ const AssignedTasks = ({ user }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchInspections();
@@ -281,7 +281,7 @@ const InspectionLocations = ({ user }) => {
   const [inspections, setInspections] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchInspections();
@@ -335,7 +335,7 @@ const InspectionReports = ({ user }) => {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchInspections();

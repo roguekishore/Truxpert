@@ -12,7 +12,7 @@ const VendorScreen = ({ setActiveSection, onSelectBrand }) => {
   const [recentTrucks, setRecentTrucks] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   const fetchVendorData = useCallback(async () => {
     try {

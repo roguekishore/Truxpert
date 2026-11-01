@@ -91,7 +91,7 @@ test("fetching_and_displaying_vendor_applications", async () => {
   ];
 
   // Mock the fetch function to return the mocked data
-  const fetchMock = jest.spyOn(global, "fetch").mockResolvedValue({
+  const fetchMock = vi.spyOn(global, "fetch").mockResolvedValue({
     ok: true,
     json: () => Promise.resolve(MOCK_DATA),
   });
@@ -138,7 +138,7 @@ test("submits_valid_application_form", async () => {
   fireEvent.change(screen.getByLabelText("Menu Highlights:"), { target: { value: "Tacos, Burritos" } });
   fireEvent.change(screen.getByLabelText("Phone Number:"), { target: { value: "1234567890" } });
 
-  const fetchMock = jest.spyOn(global, "fetch").mockResolvedValue({ ok: true });
+  const fetchMock = vi.spyOn(global, "fetch").mockResolvedValue({ ok: true });
 
   // Submit the form
   fireEvent.click(screen.getByText("Submit Application"));

@@ -6,7 +6,7 @@ const DisplayFoodTruck = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const BASE_URL = process.env.REACT_APP_URL;
+    const BASE_URL = import.meta.env.REACT_APP_URL;
     const fetchVendors = async () => {
       try {
         const response = await fetch(`${BASE_URL}/getAllVendors`, {

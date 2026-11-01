@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './SeedPage.css';
 
-const BASE_URL = process.env.REACT_APP_URL;
+const BASE_URL = import.meta.env.REACT_APP_URL;
 
 const SeedPage = () => {
   const [loading, setLoading] = useState(false);

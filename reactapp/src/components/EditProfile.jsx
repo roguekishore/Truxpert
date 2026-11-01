@@ -36,7 +36,7 @@ const EditProfile = ({ user, userType, onSave, onCancel }) => {
   const [success, setSuccess] = useState('');
   const [isDemoAccount, setIsDemoAccount] = useState(false);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     const fetchUserData = async () => {

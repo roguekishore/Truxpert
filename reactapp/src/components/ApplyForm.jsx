@@ -58,7 +58,7 @@ const ApplyForm = () => {
     
     const validationErrors = validateForm();
 
-    const BASE_URL = process.env.REACT_APP_URL;
+    const BASE_URL = import.meta.env.REACT_APP_URL;
     
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);

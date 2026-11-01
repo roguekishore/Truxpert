@@ -2,7 +2,7 @@ import React, { createContext, useContext } from 'react';
 import axios from 'axios';
 
 const ApiContext = createContext(null);
-const BASE_URL = process.env.REACT_APP_URL;
+const BASE_URL = import.meta.env.REACT_APP_URL;
 
 const api = axios.create({
   baseURL: `${BASE_URL}/api`,

@@ -53,7 +53,7 @@ const ReviewerDashboard = ({ user }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchStats();
@@ -127,7 +127,7 @@ const PendingReviews = ({ user }) => {
     sortDirection: 'asc'
   });
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchPendingReviews();
@@ -341,7 +341,7 @@ const ApprovedApplications = ({ user }) => {
     totalPages: 0
   });
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchApprovedReviews();
@@ -467,7 +467,7 @@ const RejectedApplications = ({ user }) => {
     totalPages: 0
   });
 
-  const BASE_URL = process.env.REACT_APP_URL;
+  const BASE_URL = import.meta.env.REACT_APP_URL;
 
   useEffect(() => {
     fetchRejectedReviews();
